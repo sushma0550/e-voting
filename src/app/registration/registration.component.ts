@@ -64,7 +64,7 @@ export class RegistrationComponent implements OnInit {
     this.router.navigate(['/','loginPage']);
     this.toaster.success("Please Login with the credentials","Registration Successful");
     
-    
+      
   }
 
   OnReset(){
