@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
     user.firstName = this.registerForm.value.firstName;
     user.lastName = this.registerForm.value.lastName;
     user.email = this.registerForm.value.email;
-    user.password = this.registerForm.value.passWord;
+    user.password = this.registerForm.value.passWord; 
     user.nINumber = this.registerForm.value.nINumber;
     user.phoneNumber = this.registerForm.value.phoneNumber;
 
@@ -64,7 +64,7 @@ export class RegistrationComponent implements OnInit {
     this.router.navigate(['/','loginPage']);
     this.toaster.success("Please Login with the credentials","Registration Successful");
     
-      
+
   }
 
   OnReset(){
