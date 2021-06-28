@@ -8,7 +8,7 @@ export function PasswordChecker(controlName:string,CompareControlName :string){
 
         if(password.value != confimPassword.value)
         {
-            confimPassword.setErrors({mustMatch:true})
+            confimPassword.setErrors({mustmatch:true})
         }
         else
         {
