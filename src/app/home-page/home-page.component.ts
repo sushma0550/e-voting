@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
+import { DataSource } from '../DataSource';
 
 @Component({
   selector: 'app-home-page',
@@ -70,9 +71,11 @@ export class HomePageComponent implements OnInit {
 
   navigateToLogin()
   {
+    DataSource.userList=[];
     this.isclosed=true;
     this.router.navigate(['/','loginPage']);
     this.modalService.dismissAll();
+   
   }
 
 }
