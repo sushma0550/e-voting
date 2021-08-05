@@ -35,29 +35,29 @@ export class HomePageComponent implements OnInit {
   {
      switch(url) { 
       case "Scottish Conservative & Union Party": { 
-         return "../../assets/scottishConservativeParty.jpg";
+         return "../../assets/scp.jpg";
         
       } 
       case "Scottish Labour Party": { 
-          return "../../assets/Scottish_Labour_Party.jpg";
+          return "../../assets/slp.jpg";
       } 
       case "Scottish Co-operative": { 
-        return "../../assets/Scottish-Co-operative-Party.jpg";
+        return "../../assets/coop.jpg";
     }
      case "Scottish Liberal Democrats": { 
-      return "../../assets/ScottishLiberalDemocrats.jfif";
+      return "../../assets/sld.jpg";
     } 
     case "Scottish National Party(SNP)": { 
       return "../../assets/snp.jpg";
     } 
     case "Abolish the Scottish Parliament Party": { 
-      return "../../assets/Logo_of_the_Abolish_the_Scottish_Parliament_Party.jfif";
+      return "../../assets/abolish.jpg";
     } 
     case "Alba Party": { 
-      return "../../assets/Alba_Party.jpg";
+      return "../../assets/alba_party.jpg";
     } 
     case "All for Unity": { 
-      return "../../assets/alliance-for-unity-scotland.jpg";
+      return "../../assets/alliance.jpg";
     } 
       default: { 
         return "../../assets/scotland.jpg"; 
