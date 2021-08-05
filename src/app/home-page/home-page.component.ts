@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
 
   electionList:string[] = ["Falkirk East","Falkirk West","Central Scotland"];
 
-  falkirkEast:string[] = ["Scottish Conservative & Union Party","Scottish Labour Party","Scottish Co-operative","Independent","Scottish Liberal Democrats","Scottish National Party(SNP)"];
+  falkirkEast:string[] = ["Scottish Conservative & Union Party","Scottish Labour Party","Scottish Co-operative","Scottish Liberal Democrats","Scottish National Party(SNP)"];
   falkirkWest:string[] = ["Scottish Labour Party","Scottish Conservative & Union Party" , "Scottish National Party(SNP)","Scottish Liberal Democrats"];
   centralScotland:string[]=["Abolish the Scottish Parliament Party","Alba Party","All for Unity"]
 
@@ -45,13 +45,13 @@ export class HomePageComponent implements OnInit {
         return "../../assets/Scottish-Co-operative-Party.jpg";
     }
      case "Scottish Liberal Democrats": { 
-      return "../../assets/ScottishLiberalDemocrats.jpg";
+      return "../../assets/ScottishLiberalDemocrats.jfif";
     } 
     case "Scottish National Party(SNP)": { 
       return "../../assets/snp.jpg";
     } 
     case "Abolish the Scottish Parliament Party": { 
-      return "../../assets/Logo_of_the_Abolish_the_Scottish_Parliament_Party.jpg";
+      return "../../assets/Logo_of_the_Abolish_the_Scottish_Parliament_Party.jfif";
     } 
     case "Alba Party": { 
       return "../../assets/Alba_Party.jpg";
