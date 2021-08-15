@@ -1,0 +1,135 @@
+<div class="container ">
+    <div class="card h-100 m-5 mt-5 bg-light justify-content-center align-items-center shadow">
+      <h5 class="card-header text-center">
+      Registration Form
+      </h5>
+      <div class="card-body col-6 " >
+        <form [formGroup]= "registerForm" (ngSubmit) = "OnSubmit()">
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label>First Name</label>
+              <input
+               
+              type="text" 
+              class="form-control" 
+              formControlName = "firstName"
+              [ngClass]="{'is-invalid' : submitted && helper.firstName.errors}"
+              />
+              <div *ngIf="submitted && helper.firstName.errors" class="text-warning">
+                <div *ngIf="helper.firstName.errors.required">
+                  First Name is required 
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-12">
+              <label>Last Name</label>
+              <input type="text" class="form-control"
+              formControlName = "lastName"
+              [ngClass]="{'is-invalid' : submitted && helper.lastName.errors}" />
+              <div  *ngIf="submitted && helper.lastName.errors" class="text-warning">
+                <div *ngIf="helper.lastName.errors.required">
+                  Last Name is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12">
+            <label>Email</label>
+            <input type="text" class="form-control" 
+            formControlName = "email"
+            [ngClass]="{'is-invalid' : submitted && helper.email.errors}" />
+            <div *ngIf="submitted && helper.email.touched && helper.email.errors" class="text-warning">
+              <div *ngIf="helper.email.errors.required" >Email is required</div>
+              <div *ngIf="helper.email.errors.email">
+                Email must be a valid email address
+              </div>
+            </div>
+          </div>
+  
+          <ng-container *ngIf=" helper.email.touched && helper.email.errors">
+            <div class="text-danger">
+              Value is required.
+            </div>
+          </ng-container>
+          <div class="form-row col-12">
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control"
+              formControlName = "passWord"
+              [ngClass]="{'is-invalid' : submitted && helper.passWord.errors}" />
+              <div *ngIf="helper.passWord.touched && helper.passWord.errors"  class="text-warning">
+                <div *ngIf="helper.passWord.errors.required">Password is required</div>
+                <div  *ngIf="helper.passWord.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+            <div class="form-group  col-12">
+              <label>Confirm Password</label>
+              <input type="password" class="form-control"
+              formControlName = "confirmPassword"
+            [ngClass]="{'is-invalid' : submitted && helper.confirmPassword.errors}" />
+              <div *ngIf="helper.confirmPassword.touched && helper.confirmPassword.errors" class="text-warning">
+                <div  *ngIf="helper.confirmPassword.errors.required">
+                  Confirm Password is required
+                </div>
+                <div *ngIf="helper.confirmPassword.errors.mustmatch">
+                  Passwords must match
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-12">
+              <label>NI Number</label>
+              <input type="text" class="form-control" 
+              formControlName = "nINumber"
+              [ngClass]="{'is-invalid' : submitted && helper.nINumber.errors}" />
+              <div *ngIf="submitted && helper.nINumber.touched && helper.nINumber.errors" class="text-warning">
+                <div *ngIf="helper.nINumber.errors.required" >NI Number is required</div>
+                <div  *ngIf="helper.passWord.errors.pattern">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-12">
+              <label>Phone Number</label>
+              <input type="text" class="form-control" 
+              formControlName = "phoneNumber"
+              [ngClass]="{'is-invalid' : submitted && helper.phoneNumber.errors}" />
+              <div *ngIf="submitted && helper.phoneNumber.touched && helper.phoneNumber.errors" class="text-warning">
+                <div *ngIf="helper.phoneNumber.errors.required" >Phone Number is required</div>
+                
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="form-group form-check">
+            <input type="checkbox" id="acceptTerms" class="form-check-input" 
+            formControlName = "acceptTandC"
+            [ngClass]="{'is-invalid' : submitted && helper.acceptTandC.errors}" />
+            <label for="acceptTerms" class="form-check-label"
+              >Accept Terms & Conditions</label
+            >
+            <div *ngIf="helper.acceptTandC.errors" class="text-warning">
+              Accept Ts & Cs is required
+            </div>
+          </div>
+
+      
+
+
+          <div class="form-group">
+            <button class="btn btn-success me-5">Register</button>
+            <button (click) = "OnReset()" class="btn btn-warning ml-1 col-xs-3 " type="reset">
+              Reset
+            </button>
+            
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

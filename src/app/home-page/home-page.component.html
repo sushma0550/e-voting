@@ -1,0 +1,107 @@
+
+
+<nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">United Kingdom Elections E-Voting</a>
+      <a class="navbar-brand" href="">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg>
+        Log Out</a>
+</div>
+  </nav>
+  <div class="container">
+  <div class="container col-10 bg-secondary text-light mt-5" >
+    <h1 class="display-2"> Welcome to the Scottish Elections website</h1>
+    <p class="display-5">Please select the party of your choice and vote</p>
+  </div>
+<div class="container" *ngFor="let region of electionList; let i=index">
+  <ngb-accordion closeOthers="true" #a="ngbAccordion" activeIds="content">
+      
+    <ngb-panel id="content" [closeOthers] =true>
+      <ng-template ngbPanelHeader>
+        <div class="d-flex align-items-center justify-content-between ">
+          <h5 class="m-0">{{region}}</h5>
+          <button ngbPanelToggle class="btn btn-link p-0 bg-success text text-light">click here</button>
+        </div>
+      </ng-template>
+      
+      <ng-template ngbPanelContent *ngIf="region == 'Falkirk East' " >
+        <div class="container">
+          <div class="row">
+        <div class="col-md-3 col-sm-6 ml-auto mt-1"  *ngFor="let fe of falkirkEast">
+        
+        <div class="card" style="width: 18rem;" >
+          <img src={{imageSrc(fe)}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{fe}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <button class="btn btn-success " (click)="openVerticallyCentered(content)">Vote</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+      </ng-template>
+
+      <ng-template ngbPanelContent *ngIf="region == 'Falkirk West'" >
+        <div class="container">
+          <div class="row">
+        <div class="col-md-3 col-sm-6 ml-auto mt-1" *ngFor="let fw of falkirkWest">
+        <div class="card" style="width: 18rem;" >
+          <img src={{imageSrc(fw)}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{fw}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <button class="btn btn-success " (click)="openVerticallyCentered(content)">Vote</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </ng-template>
+
+      <ng-template ngbPanelContent *ngIf="region == 'Central Scotland' " >
+        <div class="container">
+          <div class="row">
+       <div class="col-md-3 col-sm-6 ml-auto mt-1" *ngFor="let cs of centralScotland">
+        <div class="card" style="width: 18rem;" >
+          <img src={{imageSrc(cs)}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{cs}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <button class="btn btn-success" (click)="openVerticallyCentered(content)">Vote</button>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+      </ng-template>
+
+    </ngb-panel>
+  </ngb-accordion>
+</div>
+
+<div class="container col-10 bg-success text-light mt-5" >
+  <h1 class="display-2"> "Voting is the expression of our commitment to ourselves, one another, this country, and this world."</h1>
+</div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Thanks For Voting.</h4>
+    </div>
+  <div class="modal-body">
+    <p>Your Voting process is successfully done.!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="navigateToLogin()">OK</button>
+  </div>
+</ng-template>
+
+
+
+
+
